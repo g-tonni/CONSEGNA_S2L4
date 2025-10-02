@@ -150,6 +150,20 @@ console.log('')
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const loopUntil = function (x) {
+  let count = 0
+  do {
+    let nRandom = Math.floor(Math.random() * 10)
+    if (nRandom > x) {
+      count = count + 1
+    }
+    console.log(nRandom)
+  } while (count < 3)
+}
+
+loopUntil(5)
+console.log('')
+
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
 */
