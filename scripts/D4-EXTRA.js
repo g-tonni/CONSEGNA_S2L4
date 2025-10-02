@@ -8,12 +8,86 @@
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+let elementiArray = 8
+
+const giveMeRandom = function (n) {
+  let random = 0
+  let insiemeRandom = []
+  let somma = 0
+  for (let i = 0; i < n; i++) {
+    random = Math.floor(Math.random() * 11)
+    insiemeRandom.push(random)
+    if (random > 5) {
+      console.log(random + ' è maggiore di 5')
+      somma = somma + random
+    } else {
+      console.log(random + ' NON è maggiore di 5')
+    }
+  }
+  console.log(random)
+  console.log(insiemeRandom)
+  console.log(somma)
+}
+
+giveMeRandom(elementiArray)
+console.log('')
+
 /* EXTRA 2
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "shoppingCartTotal" che calcola il totale dovuto al negozio (tenendo conto delle quantità di ogni oggetto).
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const shoppingCart = [
+  {
+    price: 8,
+    nameObj: 'Crema corpo',
+    id: '3467',
+    quantity: 2,
+  },
+  {
+    price: 10,
+    nameObj: 'Shampoo',
+    id: '7896',
+    quantity: 3,
+  },
+  {
+    price: 15,
+    nameObj: 'Maschera capelli',
+    id: '2573',
+    quantity: 3,
+  },
+  {
+    price: 3,
+    nameObj: 'Maschera viso',
+    id: '0934',
+    quantity: 1,
+  },
+  {
+    price: 9,
+    nameObj: 'Balsamo',
+    id: '7284',
+    quantity: 4,
+  },
+  {
+    price: 11,
+    nameObj: 'Struccante',
+    id: '4572',
+    quantity: 1,
+  },
+]
+
+const shoppingCartTotal = function () {
+  let prezzoTot = 0
+  for (let i = 0; i < shoppingCart.length; i++) {
+    prezzoTot = prezzoTot + shoppingCart[i].price * shoppingCart[i].quantity
+  }
+  console.log(prezzoTot)
+}
+
+shoppingCartTotal()
+console.log('')
 
 /* EXTRA 3
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
@@ -22,6 +96,18 @@
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const addToShoppingCart = function () {
+  let pezziTot = 0
+  for (let i = 0; i < shoppingCart.length; i++) {
+    pezziTot = pezziTot + shoppingCart[i].quantity
+  }
+  console.log(pezziTot)
+  return pezziTot
+}
+
+console.log(addToShoppingCart())
+console.log('')
+
 /* EXTRA 4
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "maxShoppingCart" che riceve l'array "shoppingCart" e ritorna l'oggetto più costoso in esso contenuto.
@@ -29,12 +115,33 @@
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const maxShoppingCart = function () {
+  let prezzi = []
+  for (let i = 0; i < shoppingCart.length; i++) {
+    prezzi.push(shoppingCart[i].price)
+  }
+  let prezzoMax = Math.max(...prezzi)
+  console.log(prezzi)
+  console.log(prezzoMax)
+  return prezzoMax
+}
+
+console.log(maxShoppingCart())
+console.log('')
+
 /* EXTRA 5
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "latestShoppingCart" che riceve l'array "shoppingCart" e ritorna l'ultimo elemento.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+const latestShoppingCart = function () {
+  return shoppingCart[shoppingCart.length - 1].nameObj
+}
+
+console.log(latestShoppingCart())
+console.log('')
 
 /* EXTRA 6
  Crea una funzione chiamata "loopUntil" che riceve un numero intero come parametro con valore tra 0 e 9.
