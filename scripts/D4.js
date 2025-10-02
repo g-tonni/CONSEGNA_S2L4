@@ -45,7 +45,7 @@ const crazyDiff = function (n1) {
   if (n1 > 19) {
     diff = (n1 - 19) * 3
   } else {
-    diff = n1 - 19
+    diff = Math.abs(n1 - 19) // serve per tornare un numero assoluto, non negativo
   }
   console.log(diff)
 }
@@ -84,6 +84,7 @@ const fraseEpi = 'EPICODE è fantastica!'
 
 const epify = function (stringa) {
   if (stringa.startsWith('EPICODE')) {
+    /* altrimenti if (stringa.slice(0,7) === 'EPICODE') */
     stringa = stringa
   } else {
     stringa = 'EPICODE' + ' ' + stringa
@@ -102,14 +103,17 @@ console.log('')
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 const check3and7 = function (n) {
-  if (n % 3 === 0 || n % 7 === 0) {
+  if (typeof n !== 'number' || n < 0) {
+    // verifica che sia un numero e che sia positivo
+    console.log('ERRORE')
+  } else if (n % 3 === 0 || n % 7 === 0) {
     console.log("E' un multiplo di 3 o 7")
   } else {
     console.log('Non è un multiplo di 3 o 7')
   }
 }
 
-check3and7(42)
+check3and7(56)
 console.log('')
 
 /* ESERCIZIO 7
@@ -135,9 +139,20 @@ console.log('')
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-const upperFirst = function (stringa) {}
+const fraseMin = 'oggi ho imparato ad usare le funzioni in javascript'
 
-upperFirst()
+const upperFirst = function (stringa) {
+  // stringa.split se tra le parentesi ha uno spazio divide i caratteri ogni volta che trova uno spazio
+  const parolaArray = stringa.split(' ')
+  for (let i = 0; i < parolaArray.length; i++) {
+    parolaArray[i] =
+      parolaArray[i].charAt(0).toUpperCase() + parolaArray[i].slice(1)
+  }
+  const fraseMaiuscola = parolaArray.join(' ') // anche tra queste parentesi serve uno spazio per farglielo rimettere nella frase
+  return fraseMaiuscola
+}
+
+console.log(upperFirst(fraseMin))
 console.log('')
 
 /* ESERCIZIO 9
