@@ -187,18 +187,17 @@ let elencoParole = [
 
 const longest = function (array) {
   let singoleParole = []
-  let parolaScomposta = []
+  let paroleScomposte = []
   for (let i = 0; i < array.length; i++) {
     singoleParole.push(array[i].split(' '))
+    paroleScomposte.push(singoleParole[i][0].split(''))
+    console.log('PAROLE SCOMPOSTE', paroleScomposte)
   }
-  for (let i = 0; i < singoleParole.length; i++) {
-    singoleParole[i][0].split('')
-  }
-
-  console.log()
+  let parolaMaggiore = paroleScomposte.sort()
+  console.log(parolaMaggiore)
 }
 
-longest(elencoParole)
+console.log(longest(elencoParole))
 console.log('')
 
 /* EXTRA 9
