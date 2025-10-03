@@ -176,6 +176,31 @@ Crea una funzione chiamata "average" che riceve un array come parametro e ne rit
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+let elencoParole = [
+  'Gatto',
+  'Cane',
+  'Scoiattolo',
+  'Elefante',
+  'Rana',
+  'Giraffa',
+]
+
+const longest = function (array) {
+  let singoleParole = []
+  let parolaScomposta = []
+  for (let i = 0; i < array.length; i++) {
+    singoleParole.push(array[i].split(' '))
+  }
+  for (let i = 0; i < singoleParole.length; i++) {
+    singoleParole[i][0].split('')
+  }
+
+  console.log()
+}
+
+longest(elencoParole)
+console.log('')
+
 /* EXTRA 9
  Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
  La funzione deve ritornare true se "emailContent" non contiene le parole "SPAM" o "SCAM".
