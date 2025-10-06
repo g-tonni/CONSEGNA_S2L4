@@ -193,8 +193,6 @@ const longest = function (array) {
     paroleScomposte.push(singoleParole[i][0].split(''))
     console.log('PAROLE SCOMPOSTE', paroleScomposte)
   }
-  let parolaMaggiore = paroleScomposte.sort()
-  console.log(parolaMaggiore)
 }
 
 console.log(longest(elencoParole))
